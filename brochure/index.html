@@ -4,14 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BlueCube Product Brochure</title>
-  <meta http-equiv="refresh" content="0;url=https://www.bluecubebaths.com/brochure">
   <style>
-    body { font-family: "Montserrat", sans-serif; text-align: center; padding: 60px 20px; background: #fff; color: #1a1a1a; }
-    a { color: #314452; }
+    @font-face {
+      font-family: "SangBleu";
+      src: url("https://cdn.shopify.com/s/files/1/0589/2885/7259/t/61/assets/SangBleuKingdom-Regular-WebXL.woff2") format("woff2");
+      font-weight: 400; font-style: normal; font-display: swap;
+    }
+    @font-face {
+      font-family: "Montserrat";
+      src: url("https://cdn.shopify.com/s/files/1/0589/2885/7259/t/61/assets/Montserrat-Latin.woff2") format("woff2");
+      font-weight: 100 900; font-style: normal; font-display: swap;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Montserrat", -apple-system, sans-serif;
+      color: #1a1a1a; background: #fff; line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2 { font-family: "SangBleu", Georgia, serif; font-weight: 400; }
+    a { color: #314452; text-decoration: none; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 30px; }
+    nav { padding: 20px 0; border-bottom: 1px solid #dedede; }
+    nav .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo-img { height: 36px; }
+    .nav-cta {
+      background: #000; color: #fff; padding: 12px 28px;
+      font-family: "Montserrat", sans-serif; font-weight: 500;
+      font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .hero {
+      padding: 80px 0 60px; text-align: center;
+    }
+    .hero h1 { font-size: 42px; margin-bottom: 16px; }
+    .hero p { color: #555; font-size: 16px; max-width: 600px; margin: 0 auto 40px; }
+    .pdf-embed {
+      width: 100%; height: 800px; border: 1px solid #dedede;
+      margin-bottom: 40px;
+    }
+    .download-btn {
+      display: inline-block; background: #000; color: #fff;
+      padding: 16px 40px; font-family: "Montserrat", sans-serif;
+      font-weight: 500; font-size: 14px; letter-spacing: 1px;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .download-btn:hover { background: #314452; }
+    .products {
+      padding: 60px 0; background: #f3f3f3; text-align: center;
+    }
+    .products h2 { font-size: 32px; margin-bottom: 16px; }
+    .products p { color: #555; font-size: 15px; margin-bottom: 30px; }
+    .product-imgs {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      max-width: 700px; margin: 0 auto;
+    }
+    .product-imgs img { width: 100%; border: 1px solid #dedede; }
+    .cta {
+      padding: 60px 0; text-align: center;
+    }
+    .cta p { font-size: 16px; margin-bottom: 12px; }
+    .cta .phone { font-size: 22px; font-weight: 600; }
+    footer {
+      padding: 30px 0; border-top: 1px solid #dedede;
+      text-align: center; color: #999; font-size: 13px;
+    }
+    @media (max-width: 600px) {
+      .pdf-embed { height: 500px; }
+      .product-imgs { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 32px; }
+    }
   </style>
 </head>
 <body>
-  <p>Loading BlueCube Product Brochure...</p>
-  <p><a href="https://www.bluecubebaths.com/brochure">Click here if you are not redirected.</a></p>
+  <nav>
+    <div class="container">
+      <a href="/"><img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Screenshot_2024-12-29_at_10.37.41_AMBluecubeNav.png?v=1735498663" alt="BlueCube" class="logo-img"></a>
+      <a href="tel:5415124012" class="nav-cta">Call (541) 512-4012</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Product Brochure</h1>
+      <p>Our full product line, specifications, finishes, and build details. See exactly what goes into every BlueCube.</p>
+      <iframe class="pdf-embed" src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://cdn.shopify.com/s/files/1/0589/2885/7259/files/BlueCube_Brochure_2025.pdf" title="BlueCube Product Brochure"></iframe>
+      <a href="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/BlueCube_Brochure_2025.pdf" class="download-btn" target="_blank" rel="noopener">Download Brochure (PDF)</a>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <h2>Our Lineup</h2>
+      <p>Residential and commercial cold plunges, built to order</p>
+      <div class="product-imgs">
+        <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/C2ColdPlungeTubSlateGrey45Deg01.jpg?v=1773071166" alt="BlueCube C2">
+        <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/CXColdPlungeTubWhite_45Degrees_01.jpg?v=1773154923" alt="BlueCube CX Commercial">
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <p>Questions about our products?</p>
+      <p class="phone"><a href="tel:5415124012">(541) 512-4012</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>BlueCube Baths</p>
+    </div>
+  </footer>
 </body>
 </html>
