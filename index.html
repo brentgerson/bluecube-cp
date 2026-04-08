@@ -67,6 +67,15 @@
       align-items: center;
     }
     .logo-img { height: 36px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-link {
+      font-family: "Montserrat", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--textDark);
+    }
+    .nav-link:hover { opacity: 0.7; }
     .nav-cta {
       background: var(--black);
       color: #fff;
@@ -185,17 +194,22 @@
     }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 28px;
+      max-width: 800px;
+      margin: 0 auto;
     }
     .product-card {
+      display: block;
       background: #fff;
       overflow: hidden;
       border: 1px solid var(--lightGrey);
       transition: box-shadow 0.3s;
+      color: var(--textDark);
     }
     .product-card:hover {
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      opacity: 1;
     }
     .product-card img {
       width: 100%;
@@ -391,7 +405,7 @@
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .product-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .product-grid { grid-template-columns: 1fr; max-width: 450px; }
       .commercial-features { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
@@ -413,7 +427,10 @@
   <nav>
     <div class="container">
       <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Screenshot_2024-12-29_at_10.37.41_AMBluecubeNav.png?v=1735498663" alt="BlueCube" class="logo-img">
-      <a href="tel:5415124012" class="nav-cta">Call (541) 512-4012</a>
+      <div class="nav-links">
+        <a href="https://www.bluecubebaths.com" class="nav-link" target="_blank" rel="noopener">Visit Our Website</a>
+        <a href="tel:5415124012" class="nav-cta">Call (541) 512-4012</a>
+      </div>
     </div>
   </nav>
 
@@ -461,36 +478,26 @@
   <section class="products">
     <div class="container">
       <h2 class="section-title">Our Lineup</h2>
-      <p class="section-subtitle">From stand-up entry models to full commercial builds</p>
+      <p class="section-subtitle">Residential and commercial cold plunges, built to order</p>
       <div class="product-grid">
-        <div class="product-card">
-          <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Limitless-Upright-Cold-Plunge-Tub-front-photo.jpg?v=1771463691" alt="BlueCube Deep Stand-Up Cold Plunge">
-          <div class="product-info">
-            <span class="product-badge">New 2026</span>
-            <h3>The Deep</h3>
-            <p>Stand-up cold plunge. Compact footprint, full immersion. Perfect entry point for facilities exploring cold therapy.</p>
-            <span class="product-price">Starting ~$13K</span>
-          </div>
-        </div>
-        <div class="product-card">
+        <a href="https://www.bluecubebaths.com/products/c2-cold-plunge-tub" class="product-card" target="_blank" rel="noopener">
           <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/C2ColdPlungeTubSlateGrey45Deg01.jpg?v=1773071166" alt="BlueCube C2 Cold Plunge Tub">
           <div class="product-info">
-            <span class="product-badge">Core Model</span>
             <h3>C2</h3>
             <p>Our most popular model. 60" basin with River Mode circulation. The cold plunge that built our reputation.</p>
-            <span class="product-price">Starting ~$18K</span>
           </div>
-        </div>
-        <div class="product-card">
-          <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Group_9246C60.png?v=1738198764" alt="BlueCube CX Commercial Cold Plunge">
+        </a>
+        <a href="https://www.bluecubebaths.com/products/cx-cold-plunge-tub" class="product-card" target="_blank" rel="noopener">
+          <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/CXColdPlungeTubWhite_45Degrees_01.jpg?v=1773154923" alt="BlueCube CX Commercial Cold Plunge Tub">
           <div class="product-info">
-            <span class="product-badge">Commercial</span>
-            <h3>CX</h3>
+            <h3>CX Commercial</h3>
             <p>Purpose-built for commercial facilities. Balboa controls, AOP sanitation, hot/cold capable. Compliance-ready out of the box.</p>
-            <span class="product-price">Starting ~$25K</span>
           </div>
-        </div>
+        </a>
       </div>
+      <p style="text-align:center; margin-top:36px;">
+        <a href="https://www.bluecubebaths.com/collections/cold-plunge-tub-models" class="resource-btn" target="_blank" rel="noopener">See All Models</a>
+      </p>
     </div>
   </section>
 
