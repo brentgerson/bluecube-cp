@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BlueCube Cold Plunge Tubs — Handbuilt in Oregon</title>
+  <meta name="description" content="Premium cold plunge tubs handbuilt in Oregon from 316 stainless steel. Commercial-grade. River Mode circulation. The luxury cold experience.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0a1628;
+      --dark: #0f1f35;
+      --steel: #1a2d47;
+      --accent: #3a8fd4;
+      --light-accent: #5fa8e6;
+      --white: #f5f7fa;
+      --grey: #8a9bb5;
+      --warm: #c9a96e;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--white);
+      background: var(--navy);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--light-accent); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--warm); }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* NAV */
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-img { height: 36px; width: auto; }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--light-accent); color: #fff; }
+
+    /* HERO */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .hero-tag {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      color: var(--warm);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero p {
+      font-size: 18px;
+      color: var(--grey);
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+    .hero-img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 12px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* FEATURES STRIP */
+    .features {
+      padding: 60px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+    .feature h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .feature p {
+      font-size: 14px;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    /* PRODUCTS */
+    .products {
+      padding: 80px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--grey);
+      font-size: 16px;
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .product-card {
+      background: var(--dark);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(58,143,212,0.3);
+    }
+    .product-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+    .product-info {
+      padding: 24px;
+    }
+    .product-badge {
+      display: inline-block;
+      background: rgba(58,143,212,0.15);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .product-badge.commercial {
+      background: rgba(201,169,110,0.15);
+      color: var(--warm);
+    }
+    .product-badge.new {
+      background: rgba(76,175,80,0.15);
+      color: #81c784;
+    }
+    .product-info h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .product-info p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+    .product-price {
+      font-size: 15px;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* RIVER MODE */
+    .rivermode {
+      padding: 80px 0;
+      background: var(--dark);
+    }
+    .rivermode-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .rivermode h2 {
+      font-size: clamp(26px, 4vw, 36px);
+      margin-bottom: 20px;
+    }
+    .rivermode h2 span { color: var(--accent); }
+    .rivermode p {
+      color: var(--grey);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    .rivermode-img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* COMMERCIAL */
+    .commercial {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .commercial-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      text-align: left;
+    }
+    .comm-feature {
+      background: var(--dark);
+      padding: 28px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .comm-feature h4 {
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: var(--warm);
+    }
+    .comm-feature p {
+      font-size: 14px;
+      color: var(--grey);
+    }
+
+    /* RESOURCES */
+    .resources {
+      padding: 80px 0;
+      background: var(--dark);
+    }
+    .resource-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .resource-card {
+      background: var(--steel);
+      border-radius: 12px;
+      padding: 36px;
+      border: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .resource-card:hover {
+      border-color: rgba(58,143,212,0.3);
+    }
+    .resource-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .resource-card p {
+      color: var(--grey);
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    .resource-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .resource-btn:hover { background: var(--light-accent); color: #fff; }
+
+    /* CTA */
+    .cta {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: clamp(26px, 4vw, 38px);
+      margin-bottom: 16px;
+    }
+    .cta p {
+      color: var(--grey);
+      font-size: 16px;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--light-accent); color: #fff; }
+    .btn-secondary {
+      border: 1px solid var(--grey);
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+      color: var(--grey);
+      font-size: 13px;
+    }
+    footer a { color: var(--grey); }
+    footer a:hover { color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero { padding: 50px 0 40px; }
+      .rivermode-inner { grid-template-columns: 1fr; gap: 30px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .resource-cards { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+    }
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Screenshot_2024-12-29_at_10.37.41_AMBluecubeNav.png?v=1735498663" alt="BlueCube" class="logo-img">
+      <a href="tel:5415124012" class="nav-cta">Call (541) 512-4012</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-tag">Discipline by Design</p>
+      <h1>Premium Cold Plunges,<br><span>Handbuilt in Oregon</span></h1>
+      <p>316 stainless steel. Proprietary River Mode circulation. Commercial-grade engineering. Every unit built by hand — not mass-produced, not imported.</p>
+      <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/C2ColdPlungeTubBlack45Deg01-resized.jpg?v=1773070598" alt="BlueCube C2 Cold Plunge Tub" class="hero-img">
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature">
+          <span class="feature-icon">&#9878;</span>
+          <h3>316 Stainless Steel</h3>
+          <p>Marine-grade stainless steel body with Line-X coated marine plywood. Built to last decades, not seasons.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">&#8776;</span>
+          <h3>River Mode</h3>
+          <p>Our proprietary circulation system creates true full-body immersion. No one else has it.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">&#9881;</span>
+          <h3>Commercial Grade</h3>
+          <p>Designed for all-day facility use. Stable temperatures. No maintenance headaches. Compliance-ready.</p>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">&#9733;</span>
+          <h3>American Made</h3>
+          <p>Every unit handbuilt in Redmond, Oregon. We offer FaceTime shop tours so you can see exactly how they're made.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="container">
+      <h2 class="section-title">Our Lineup</h2>
+      <p class="section-subtitle">From stand-up entry models to full commercial builds — options from ~$13K to $35K+</p>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Limitless-Upright-Cold-Plunge-Tub-front-photo.jpg?v=1771463691" alt="BlueCube Deep Stand-Up Cold Plunge">
+          <div class="product-info">
+            <span class="product-badge new">New 2026</span>
+            <h3>The Deep</h3>
+            <p>Stand-up cold plunge. Compact footprint, full immersion. Perfect entry point for facilities exploring cold therapy.</p>
+            <span class="product-price">Starting ~$13K</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/C2ColdPlungeTubSlateGrey45Deg01.jpg?v=1773071166" alt="BlueCube C2 Cold Plunge Tub">
+          <div class="product-info">
+            <span class="product-badge">Core Model</span>
+            <h3>C2</h3>
+            <p>Our most popular model. 60" basin with River Mode circulation. The cold plunge that built our reputation.</p>
+            <span class="product-price">Starting ~$18K</span>
+          </div>
+        </div>
+        <div class="product-card">
+          <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Group_9246C60.png?v=1738198764" alt="BlueCube CX Commercial Cold Plunge">
+          <div class="product-info">
+            <span class="product-badge commercial">Commercial</span>
+            <h3>CX</h3>
+            <p>Purpose-built for commercial facilities. Balboa controls, AOP sanitation, hot/cold capable. Compliance-ready out of the box.</p>
+            <span class="product-price">Starting ~$25K</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIVER MODE -->
+  <section class="rivermode">
+    <div class="container">
+      <div class="rivermode-inner">
+        <div>
+          <h2>What Is <span>River Mode</span>?</h2>
+          <p>Most cold plunges are still water. You sit in them and a warm pocket forms around your body, reducing the effectiveness of the cold exposure.</p>
+          <p>River Mode is our proprietary hydro-agitation system. It circulates water around your entire body — like standing in a cold river. The thermal barrier never forms. You get true, even cold exposure from the first second to the last.</p>
+          <p>No other manufacturer offers this. It's the single biggest reason our customers say BlueCube feels different from everything else they've tried.</p>
+        </div>
+        <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/imageBluecubeC1.png?v=1738198669" alt="BlueCube C1 Cold Plunge with River Mode" class="rivermode-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMERCIAL -->
+  <section class="commercial">
+    <div class="container">
+      <h2 class="section-title">Built for Facilities</h2>
+      <p class="section-subtitle">Gyms, studios, spas, and hotels trust BlueCube for commercial cold therapy</p>
+      <div class="commercial-features">
+        <div class="comm-feature">
+          <h4>All-Day Operation</h4>
+          <p>Engineered to run continuously without temperature drift. Your busiest day is just another day for a BlueCube.</p>
+        </div>
+        <div class="comm-feature">
+          <h4>Compliance Ready</h4>
+          <p>CX models include Balboa controls and AOP sanitation. Built to meet commercial health and safety requirements.</p>
+        </div>
+        <div class="comm-feature">
+          <h4>Low Maintenance</h4>
+          <p>316 stainless steel doesn't corrode, stain, or harbor bacteria like acrylic or plastic alternatives.</p>
+        </div>
+        <div class="comm-feature">
+          <h4>Member Experience</h4>
+          <p>River Mode + premium build quality = an experience your members talk about. It's a differentiator, not just an amenity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="resources">
+    <div class="container">
+      <h2 class="section-title">Learn More</h2>
+      <p class="section-subtitle">Everything you need to evaluate cold plunge for your facility</p>
+      <div class="resource-cards">
+        <div class="resource-card">
+          <h3>Product Brochure</h3>
+          <p>Full product line, specifications, finishes, and build details. See exactly what goes into every BlueCube.</p>
+          <a href="https://www.bluecubebaths.com/brochure" class="resource-btn" target="_blank" rel="noopener">View Brochure</a>
+        </div>
+        <div class="resource-card">
+          <h3>Cold Plunge Guide</h3>
+          <p>The science behind cold water immersion, best practices for facilities, and what to look for in a commercial unit.</p>
+          <a href="https://www.bluecubebaths.com/coldplungeguide" class="resource-btn" target="_blank" rel="noopener">Read the Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to See It for Yourself?</h2>
+      <p>We'll walk you through our shop on FaceTime and show you exactly how your unit gets built. No pressure, no pitch deck — just the product.</p>
+      <div class="cta-buttons">
+        <a href="tel:5415124012" class="btn-primary">Call (541) 512-4012</a>
+        <a href="https://www.bluecubebaths.com" class="btn-secondary" target="_blank" rel="noopener">Visit BlueCubeBaths.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>BlueCube Wellness, LLC &mdash; Handbuilt in Redmond, Oregon</p>
+      <p style="margin-top: 8px;"><a href="https://www.bluecubebaths.com" target="_blank" rel="noopener">bluecubebaths.com</a> &nbsp;|&nbsp; (541) 512-4012</p>
+    </div>
+  </footer>
+
+</body>
+</html>
