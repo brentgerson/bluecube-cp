@@ -6,36 +6,60 @@
   <title>BlueCube Cold Plunge Tubs — Handbuilt in Oregon</title>
   <meta name="description" content="Premium cold plunge tubs handbuilt in Oregon from 316 stainless steel. Commercial-grade. River Mode circulation. The luxury cold experience.">
   <style>
+    @font-face {
+      font-family: "SangBleu";
+      src: url("https://cdn.shopify.com/s/files/1/0589/2885/7259/t/61/assets/SangBleuKingdom-Regular-WebXL.woff2") format("woff2"),
+           url("https://cdn.shopify.com/s/files/1/0589/2885/7259/t/61/assets/SangBleuKingdom-Regular-WebXL.woff") format("woff");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "SangBleu";
+      src: url("https://cdn.shopify.com/s/files/1/0589/2885/7259/t/61/assets/SangBleuKingdom-LightItalic-WebXL.woff2") format("woff2"),
+           url("https://cdn.shopify.com/s/files/1/0589/2885/7259/t/61/assets/SangBleuKingdom-LightItalic-WebXL.woff") format("woff");
+      font-weight: 300;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Montserrat";
+      src: url("https://cdn.shopify.com/s/files/1/0589/2885/7259/t/61/assets/Montserrat-Latin.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #0a1628;
-      --dark: #0f1f35;
-      --steel: #1a2d47;
-      --accent: #3a8fd4;
-      --light-accent: #5fa8e6;
-      --white: #f5f7fa;
-      --grey: #8a9bb5;
-      --warm: #c9a96e;
+      --grey: #fcfafa;
+      --steel: #f3f3f3;
+      --navy: #314452;
+      --black: #000;
+      --lightGrey: #dedede;
+      --textDark: #1a1a1a;
+      --textMid: #555;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      color: var(--white);
-      background: var(--navy);
+      font-family: "Montserrat", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--textDark);
+      background: #fff;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--light-accent); text-decoration: none; transition: color 0.2s; }
-    a:hover { color: var(--warm); }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    h1, h2, h3 { font-family: "SangBleu", Georgia, "Times New Roman", serif; font-weight: 400; }
+    a { color: var(--navy); text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.7; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
 
     /* NAV */
     nav {
       padding: 20px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: #fff;
+      border-bottom: 1px solid var(--lightGrey);
     }
     nav .container {
       display: flex;
@@ -44,310 +68,341 @@
     }
     .logo-img { height: 36px; width: auto; }
     .nav-cta {
-      background: var(--accent);
+      background: var(--black);
       color: #fff;
-      padding: 10px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 14px;
+      padding: 12px 28px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: background 0.2s;
     }
-    .nav-cta:hover { background: var(--light-accent); color: #fff; }
+    .nav-cta:hover { background: var(--navy); opacity: 1; }
 
     /* HERO */
     .hero {
-      padding: 80px 0 60px;
+      position: relative;
+      height: 85vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      max-width: 800px;
+      padding: 40px;
     }
     .hero-tag {
       text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: 13px;
-      color: var(--warm);
-      margin-bottom: 20px;
+      letter-spacing: 5px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 24px;
+      opacity: 0.85;
     }
     .hero h1 {
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: 700;
-      line-height: 1.15;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.1;
       margin-bottom: 24px;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.5);
     }
-    .hero h1 span { color: var(--accent); }
     .hero p {
-      font-size: 18px;
-      color: var(--grey);
-      max-width: 640px;
-      margin: 0 auto 40px;
-    }
-    .hero-img {
-      width: 100%;
-      max-width: 900px;
-      border-radius: 12px;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 580px;
       margin: 0 auto;
-      display: block;
+      opacity: 0.9;
     }
 
     /* FEATURES STRIP */
     .features {
-      padding: 60px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 70px 0;
+      background: var(--grey);
     }
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 40px;
       text-align: center;
     }
     .feature h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 8px;
+      font-size: 18px;
+      margin-bottom: 10px;
     }
     .feature p {
       font-size: 14px;
-      color: var(--grey);
-      line-height: 1.5;
+      color: var(--textMid);
+      line-height: 1.6;
     }
-    .feature-icon {
-      font-size: 28px;
-      margin-bottom: 12px;
-      display: block;
+    .feature-line {
+      width: 40px;
+      height: 2px;
+      background: var(--navy);
+      margin: 0 auto 20px;
     }
 
     /* PRODUCTS */
     .products {
-      padding: 80px 0;
+      padding: 90px 0;
+      background: #fff;
     }
     .section-title {
       text-align: center;
-      margin-bottom: 12px;
-      font-size: clamp(26px, 4vw, 38px);
-      font-weight: 700;
+      margin-bottom: 14px;
+      font-size: clamp(28px, 4vw, 42px);
     }
     .section-subtitle {
       text-align: center;
-      color: var(--grey);
-      font-size: 16px;
-      margin-bottom: 50px;
-      max-width: 600px;
+      color: var(--textMid);
+      font-size: 15px;
+      margin-bottom: 60px;
+      max-width: 550px;
       margin-left: auto;
       margin-right: auto;
     }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
     }
     .product-card {
-      background: var(--dark);
-      border-radius: 12px;
+      background: #fff;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-      transition: transform 0.2s, border-color 0.2s;
+      border: 1px solid var(--lightGrey);
+      transition: box-shadow 0.3s;
     }
     .product-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(58,143,212,0.3);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
     .product-card img {
       width: 100%;
-      height: 240px;
+      height: 260px;
       object-fit: cover;
+      background: var(--steel);
     }
     .product-info {
-      padding: 24px;
+      padding: 28px;
     }
     .product-badge {
       display: inline-block;
-      background: rgba(58,143,212,0.15);
-      color: var(--accent);
-      font-size: 12px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 11px;
       font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 20px;
-      margin-bottom: 12px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .product-badge.commercial {
-      background: rgba(201,169,110,0.15);
-      color: var(--warm);
-    }
-    .product-badge.new {
-      background: rgba(76,175,80,0.15);
-      color: #81c784;
+      color: var(--navy);
+      margin-bottom: 14px;
     }
     .product-info h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
+      font-size: 24px;
+      margin-bottom: 10px;
     }
     .product-info p {
-      color: var(--grey);
+      color: var(--textMid);
       font-size: 14px;
-      margin-bottom: 16px;
+      line-height: 1.6;
+      margin-bottom: 18px;
     }
     .product-price {
-      font-size: 15px;
-      color: var(--white);
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
       font-weight: 600;
+      color: var(--textDark);
     }
 
     /* RIVER MODE */
     .rivermode {
-      padding: 80px 0;
-      background: var(--dark);
+      padding: 100px 0;
+      background: var(--navy);
+      color: #fff;
     }
     .rivermode-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 70px;
       align-items: center;
     }
     .rivermode h2 {
-      font-size: clamp(26px, 4vw, 36px);
-      margin-bottom: 20px;
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 24px;
     }
-    .rivermode h2 span { color: var(--accent); }
     .rivermode p {
-      color: var(--grey);
-      margin-bottom: 16px;
-      font-size: 16px;
+      opacity: 0.85;
+      margin-bottom: 18px;
+      font-size: 15px;
+      line-height: 1.7;
     }
     .rivermode-img {
       width: 100%;
-      border-radius: 12px;
     }
 
     /* COMMERCIAL */
     .commercial {
-      padding: 80px 0;
-      text-align: center;
+      padding: 90px 0;
+      background: var(--steel);
     }
     .commercial-features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-      text-align: left;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 50px;
     }
     .comm-feature {
-      background: var(--dark);
-      padding: 28px;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.06);
+      background: #fff;
+      padding: 32px 28px;
+      border: 1px solid var(--lightGrey);
     }
     .comm-feature h4 {
-      font-size: 15px;
-      margin-bottom: 8px;
-      color: var(--warm);
+      font-family: "SangBleu", Georgia, serif;
+      font-size: 17px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      color: var(--textDark);
     }
     .comm-feature p {
       font-size: 14px;
-      color: var(--grey);
+      color: var(--textMid);
+      line-height: 1.6;
     }
 
     /* RESOURCES */
     .resources {
-      padding: 80px 0;
-      background: var(--dark);
+      padding: 90px 0;
+      background: #fff;
     }
     .resource-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 50px;
     }
     .resource-card {
-      background: var(--steel);
-      border-radius: 12px;
-      padding: 36px;
-      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--grey);
+      padding: 44px;
       text-align: center;
-      transition: border-color 0.2s;
+      border: 1px solid var(--lightGrey);
+      transition: box-shadow 0.3s;
     }
     .resource-card:hover {
-      border-color: rgba(58,143,212,0.3);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
     }
     .resource-card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
+      font-size: 24px;
+      margin-bottom: 14px;
     }
     .resource-card p {
-      color: var(--grey);
+      color: var(--textMid);
       font-size: 14px;
-      margin-bottom: 24px;
+      line-height: 1.6;
+      margin-bottom: 28px;
     }
     .resource-btn {
       display: inline-block;
-      background: var(--accent);
+      background: var(--black);
       color: #fff;
-      padding: 12px 28px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 14px;
+      padding: 14px 36px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: background 0.2s;
     }
-    .resource-btn:hover { background: var(--light-accent); color: #fff; }
+    .resource-btn:hover { background: var(--navy); opacity: 1; }
 
     /* CTA */
     .cta {
-      padding: 80px 0;
+      padding: 100px 0;
+      background: var(--navy);
       text-align: center;
+      color: #fff;
     }
     .cta h2 {
-      font-size: clamp(26px, 4vw, 38px);
-      margin-bottom: 16px;
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 18px;
     }
     .cta p {
-      color: var(--grey);
+      opacity: 0.85;
       font-size: 16px;
-      max-width: 500px;
-      margin: 0 auto 32px;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
     }
     .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
     .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      padding: 14px 32px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 16px;
+      background: #fff;
+      color: var(--black);
+      padding: 14px 36px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: background 0.2s;
     }
-    .btn-primary:hover { background: var(--light-accent); color: #fff; }
+    .btn-primary:hover { background: var(--lightGrey); opacity: 1; }
     .btn-secondary {
-      border: 1px solid var(--grey);
-      color: var(--white);
-      padding: 14px 32px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 16px;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 14px 36px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       transition: border-color 0.2s;
     }
-    .btn-secondary:hover { border-color: var(--accent); }
+    .btn-secondary:hover { border-color: #fff; opacity: 1; }
 
     /* FOOTER */
     footer {
       padding: 40px 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      background: var(--black);
       text-align: center;
-      color: var(--grey);
+      color: rgba(255,255,255,0.5);
       font-size: 13px;
     }
-    footer a { color: var(--grey); }
-    footer a:hover { color: var(--white); }
+    footer a { color: rgba(255,255,255,0.5); }
+    footer a:hover { color: #fff; opacity: 1; }
 
     /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .product-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+      .commercial-features { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 768px) {
-      .hero { padding: 50px 0 40px; }
-      .rivermode-inner { grid-template-columns: 1fr; gap: 30px; }
-      .product-grid { grid-template-columns: 1fr; }
+      .hero { height: 70vh; min-height: 400px; }
+      .hero-content { padding: 24px; }
+      .rivermode-inner { grid-template-columns: 1fr; gap: 40px; }
       .resource-cards { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
     }
     @media (max-width: 480px) {
       .features-grid { grid-template-columns: 1fr; }
+      .commercial-features { grid-template-columns: 1fr; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
   </style>
@@ -364,11 +419,13 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="container">
+    <div class="hero-bg">
+      <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/C2ColdPlungeTubBlack45Deg01-resized.jpg?v=1773070598" alt="BlueCube C2 Cold Plunge Tub">
+    </div>
+    <div class="hero-content">
       <p class="hero-tag">Discipline by Design</p>
-      <h1>Premium Cold Plunges,<br><span>Handbuilt in Oregon</span></h1>
-      <p>316 stainless steel. Proprietary River Mode circulation. Commercial-grade engineering. Every unit built by hand — not mass-produced, not imported.</p>
-      <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/C2ColdPlungeTubBlack45Deg01-resized.jpg?v=1773070598" alt="BlueCube C2 Cold Plunge Tub" class="hero-img">
+      <h1>Premium Cold Plunges,<br>Handbuilt in Oregon</h1>
+      <p>316 stainless steel. Proprietary River Mode circulation. Commercial-grade engineering. Every unit built by hand.</p>
     </div>
   </section>
 
@@ -377,24 +434,24 @@
     <div class="container">
       <div class="features-grid">
         <div class="feature">
-          <span class="feature-icon">&#9878;</span>
+          <div class="feature-line"></div>
           <h3>316 Stainless Steel</h3>
           <p>Marine-grade stainless steel body with Line-X coated marine plywood. Built to last decades, not seasons.</p>
         </div>
         <div class="feature">
-          <span class="feature-icon">&#8776;</span>
+          <div class="feature-line"></div>
           <h3>River Mode</h3>
           <p>Our proprietary circulation system creates true full-body immersion. No one else has it.</p>
         </div>
         <div class="feature">
-          <span class="feature-icon">&#9881;</span>
+          <div class="feature-line"></div>
           <h3>Commercial Grade</h3>
-          <p>Designed for all-day facility use. Stable temperatures. No maintenance headaches. Compliance-ready.</p>
+          <p>Designed for all-day facility use. Stable temperatures, no maintenance headaches, compliance-ready.</p>
         </div>
         <div class="feature">
-          <span class="feature-icon">&#9733;</span>
+          <div class="feature-line"></div>
           <h3>American Made</h3>
-          <p>Every unit handbuilt in Redmond, Oregon. We offer FaceTime shop tours so you can see exactly how they're made.</p>
+          <p>Every unit handbuilt in Redmond, Oregon. We offer FaceTime shop tours so you can see how they're made.</p>
         </div>
       </div>
     </div>
@@ -404,12 +461,12 @@
   <section class="products">
     <div class="container">
       <h2 class="section-title">Our Lineup</h2>
-      <p class="section-subtitle">From stand-up entry models to full commercial builds — options from ~$13K to $35K+</p>
+      <p class="section-subtitle">From stand-up entry models to full commercial builds</p>
       <div class="product-grid">
         <div class="product-card">
           <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Limitless-Upright-Cold-Plunge-Tub-front-photo.jpg?v=1771463691" alt="BlueCube Deep Stand-Up Cold Plunge">
           <div class="product-info">
-            <span class="product-badge new">New 2026</span>
+            <span class="product-badge">New 2026</span>
             <h3>The Deep</h3>
             <p>Stand-up cold plunge. Compact footprint, full immersion. Perfect entry point for facilities exploring cold therapy.</p>
             <span class="product-price">Starting ~$13K</span>
@@ -427,7 +484,7 @@
         <div class="product-card">
           <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/Group_9246C60.png?v=1738198764" alt="BlueCube CX Commercial Cold Plunge">
           <div class="product-info">
-            <span class="product-badge commercial">Commercial</span>
+            <span class="product-badge">Commercial</span>
             <h3>CX</h3>
             <p>Purpose-built for commercial facilities. Balboa controls, AOP sanitation, hot/cold capable. Compliance-ready out of the box.</p>
             <span class="product-price">Starting ~$25K</span>
@@ -442,9 +499,9 @@
     <div class="container">
       <div class="rivermode-inner">
         <div>
-          <h2>What Is <span>River Mode</span>?</h2>
+          <h2>What Is River Mode?</h2>
           <p>Most cold plunges are still water. You sit in them and a warm pocket forms around your body, reducing the effectiveness of the cold exposure.</p>
-          <p>River Mode is our proprietary hydro-agitation system. It circulates water around your entire body — like standing in a cold river. The thermal barrier never forms. You get true, even cold exposure from the first second to the last.</p>
+          <p>River Mode is our proprietary hydro-agitation system. It circulates water around your entire body — like standing in a cold river. The thermal barrier never forms.</p>
           <p>No other manufacturer offers this. It's the single biggest reason our customers say BlueCube feels different from everything else they've tried.</p>
         </div>
         <img src="https://cdn.shopify.com/s/files/1/0589/2885/7259/files/imageBluecubeC1.png?v=1738198669" alt="BlueCube C1 Cold Plunge with River Mode" class="rivermode-img">
@@ -472,7 +529,7 @@
         </div>
         <div class="comm-feature">
           <h4>Member Experience</h4>
-          <p>River Mode + premium build quality = an experience your members talk about. It's a differentiator, not just an amenity.</p>
+          <p>River Mode and premium build quality create an experience your members talk about. A differentiator, not just an amenity.</p>
         </div>
       </div>
     </div>
@@ -491,7 +548,7 @@
         </div>
         <div class="resource-card">
           <h3>Cold Plunge Guide</h3>
-          <p>The science behind cold water immersion, best practices for facilities, and what to look for in a commercial unit.</p>
+          <p>The science behind cold water immersion, best practices, and what to look for in a commercial unit.</p>
           <a href="https://www.bluecubebaths.com/coldplungeguide" class="resource-btn" target="_blank" rel="noopener">Read the Guide</a>
         </div>
       </div>
